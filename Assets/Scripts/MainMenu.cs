@@ -56,7 +56,9 @@ public class MainMenu : MonoBehaviour
     }
     public void OpenTrackSelect()
     {
+        
         CloseRaceSetup();
+        AudioManager.instance.PlaySound("selectCourse");
         trackSelectPanel.SetActive(true);
     }
     public void CloseTrackSelect()
@@ -67,6 +69,7 @@ public class MainMenu : MonoBehaviour
     public void OpenRacerSelect()
     {
         CloseRaceSetup();
+        AudioManager.instance.PlaySound("selectVehicle");
         racerSelectPanel.SetActive(true);
     }
     public void CloseRacerSelect()

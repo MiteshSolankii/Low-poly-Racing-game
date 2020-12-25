@@ -37,6 +37,7 @@ public class RaceManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        AudioManager.instance.PlaySound("Three");
         totalLaps = RaceInfoManager.instance.noOfLaps;
         aiNumberToSpawn = RaceInfoManager.instance.noOfAI;
 
@@ -83,7 +84,7 @@ public class RaceManager : MonoBehaviour
     void Update()
     {
         if (isStarting)
-        {
+        { 
             StartCountDown();
         }
         else
@@ -155,22 +156,50 @@ public class RaceManager : MonoBehaviour
         startCounter -= Time.deltaTime;
         if (startCounter <= 0)
         {
+            
+            if (currentCountdown == 3)
+            {
+                AudioManager.instance.PlaySound("Two");
+
+            }
+            else if (currentCountdown == 2)
+            {
+                AudioManager.instance.PlaySound("One");
+            }
+            //StartCoroutine(CountdownSound());
             currentCountdown--;
+            
             startCounter = timeBetweenStartCount;
 
             UIManager.instance.countdownText.text = currentCountdown + "!";
+           
+
 
             if (currentCountdown == 0)
             {
+               // StopCoroutine("CountdownSound");
                 isStarting = false;
-
+                AudioManager.instance.PlaySound("Go");
                 UIManager.instance.countdownText.gameObject.SetActive(false);
                 UIManager.instance.goText.gameObject.SetActive(true);
             }
         }
 
     }
+  /*  IEnumerator CountdownSound()
+    {
+        AudioManager.instance.PlaySound("Three");
+       yield return new WaitForSeconds(1f);
+        AudioManager.instance.PlaySound("Two");
+       yield return new WaitForSeconds(1f);
+        AudioManager.instance.PlaySound("One");
 
+        yield return null;
+        StopCoroutine(CountdownSound());
+
+        
+    }
+  */
     public void FinishRace()
     {
         raceCompleted = true;
@@ -179,6 +208,7 @@ public class RaceManager : MonoBehaviour
         {
             case 1:
                 UIManager.instance.raceResultText.text = "You Finished 1st";
+                AudioManager.instance.PlaySound("Winner");
                 if(RaceInfoManager.instance.trackToUnlock != "")
                 {
                     if (!PlayerPrefs.HasKey(RaceInfoManager.instance.trackToUnlock + "_unlocked"))

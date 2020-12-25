@@ -47,6 +47,7 @@ public class UIManager : MonoBehaviour
         {
             Time.timeScale = 1f;
             touchInput.SetActive(true);
+           // AudioManager.instance.PlaySound("Continue");
         }
 
     }
