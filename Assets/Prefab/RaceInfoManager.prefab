@@ -1,0 +1,53 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &8577880330699915545
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8577880330699915547}
+  - component: {fileID: 8577880330699915546}
+  m_Layer: 0
+  m_Name: RaceInfoManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8577880330699915547
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8577880330699915545}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8577880330699915546
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8577880330699915545}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6ef566574e385249986a5095bda0b2b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  racerToUse: {fileID: 9207437009303054424, guid: 19e45c6090f31f9448e4db0676c2446a, type: 3}
+  trackToLoad: Track1_Grassy
+  noOfAI: 7
+  noOfLaps: 1
+  enteredRace: 0
+  trackSprite: {fileID: 21300000, guid: 75901588e46f98e49b4131d86b2d491a, type: 3}
+  racerSprite: {fileID: 21300000, guid: 3b7ccaca117794b4080bfc13d28078ae, type: 3}
+  trackToUnlock: Track2_Snowy
