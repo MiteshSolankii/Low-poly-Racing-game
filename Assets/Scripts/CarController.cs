@@ -121,18 +121,18 @@ public class CarController : MonoBehaviour
             speedInput = 0f;
             if (CrossPlatformInputManager.GetAxis("Vertical") > 0 || Input.GetAxis("Vertical")>0 ) //forward movement
             {
-                speedInput = CrossPlatformInputManager.GetAxis("Vertical") * forwardAcceleration; 
-               // speedInput = Input.GetAxis("Vertical") * forwardAcceleration;
+               // speedInput = CrossPlatformInputManager.GetAxis("Vertical") * forwardAcceleration; 
+               speedInput = Input.GetAxis("Vertical") * forwardAcceleration;
                
             }
             else if (CrossPlatformInputManager.GetAxis("Vertical") < 0 || Input.GetAxis("Vertical") < 0) //reverse movement
             {
-                 speedInput = CrossPlatformInputManager.GetAxis("Vertical") * reverseAcceleration;
-               // speedInput = Input.GetAxis("Vertical") * reverseAcceleration;
+                // speedInput = CrossPlatformInputManager.GetAxis("Vertical") * reverseAcceleration;
+                speedInput = Input.GetAxis("Vertical") * reverseAcceleration;
             }
 
-            turnInput = CrossPlatformInputManager.GetAxis("Horizontal");
-           // turnInput = Input.GetAxis("Horizontal");
+           // turnInput = CrossPlatformInputManager.GetAxis("Horizontal");
+            turnInput = Input.GetAxis("Horizontal");
 
             if (resetCounter > 0)
             {
